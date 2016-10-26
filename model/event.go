@@ -90,7 +90,7 @@ func (this *Event) AlarmLevel() string {
 	}
 }
 
-func (this *Event) StatusString() {
+func (this *Event) StatusString() string {
 	switch this.Status {
 	default:
 		return "未知状态"
