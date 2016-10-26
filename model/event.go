@@ -75,6 +75,32 @@ func (this *Event) Priority() int {
 	return this.Expression.Priority
 }
 
+func (this *Event) AlarmLevel() string {
+	switch this.Priority() {
+	default:
+		return "未知等级"
+	case 0:
+		return "致命错误"
+	case 1, 2:
+		return "高等级错误"
+	case 3, 4:
+		return "中等级错误"
+	case 5, 6:
+		return "低等级错误"
+	}
+}
+
+func (this *Event) StatusString() {
+	switch this.Status {
+	default:
+		return "未知状态"
+	case "OK":
+		return "已恢复"
+	case "PROBLEM":
+		return "未恢复"
+	}
+}
+
 func (this *Event) Note() string {
 	if this.Strategy != nil {
 		return this.Strategy.Note
