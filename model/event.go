@@ -78,15 +78,15 @@ func (this *Event) Priority() int {
 func (this *Event) AlarmLevel() string {
 	switch this.Priority() {
 	default:
-		return "未知等级"
+		return "未知告警"
 	case 0:
-		return "致命错误"
-	case 1, 2:
-		return "高等级错误"
-	case 3, 4:
-		return "中等级错误"
+		return "致命告警"
+	case 1:
+		return "高等级告警"
+	case 2, 3, 4:
+		return "中等级告警"
 	case 5, 6:
-		return "低等级错误"
+		return "低等级告警"
 	}
 }
 
