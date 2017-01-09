@@ -1,8 +1,9 @@
 package model
 
 import (
+	"common/utils"
 	"fmt"
-	"github.com/open-falcon/common/utils"
+
 	ttime "github.com/toolkits/time"
 )
 

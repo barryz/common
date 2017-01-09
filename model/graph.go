@@ -1,8 +1,8 @@
 package model
 
 import (
+	MUtils "common/utils"
 	"fmt"
-	MUtils "github.com/open-falcon/common/utils"
 	"math"
 )
 

@@ -1,15 +1,16 @@
 package pool
 
 import (
+	"common/model"
 	"fmt"
-	"github.com/open-falcon/common/model"
-	"github.com/toolkits/pool"
 	"io"
 	"log"
 	"net"
 	"net/rpc"
 	"sync"
 	"time"
+
+	"github.com/toolkits/pool"
 )
 
 type RpcClient struct {
