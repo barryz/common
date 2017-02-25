@@ -3,6 +3,7 @@ package model
 import (
 	"common/utils"
 	"fmt"
+	"encoding/json"
 )
 
 // 机器监控和实例监控都会产生Event，共用这么一个struct
@@ -42,6 +43,14 @@ func (this *Event) ExpressionId() int {
 	}
 
 	return 0
+}
+
+func (this *Event) TagsString() string {
+	bs, err := json.Marshal(this.PushedTags)
+	if err != nil {
+		return ""
+	}
+	return fmt.Sprintf("%s", string(bs))
 }
 
 func (this *Event) StrategyId() int {
